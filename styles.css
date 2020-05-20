@@ -1,0 +1,55 @@
+	body {
+		margin: 0 auto;
+		min-width: 600px;
+		width: 50%;
+		border-radius: 1em;
+		font-size: 18px;
+	}
+	h1 {
+		margin: auto;
+		margin-bottom: 20px;
+		
+		font-size: 100px;
+		border: 1px solid #000000;
+		border-color: gray;
+	}
+	form {
+		border-width: 5px;
+		border-style: dotted;
+		border-color: gray;
+		border-radius: 1em;
+		padding: 1em;
+
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	li {
+		margin-top: 1em;
+	}
+	input:focus {
+		border-width: 4px;
+		border-style: solid;
+		border-color: #000;
+	}
+	#neuerWert{
+		font-size: 60px;
+		font-weight: bold;
+	}
+	#newRow{
+		margin-top: 1em;
+	}
+	.Fehlermeldung{
+		color: red;
+		font-size: 1.5em;
+	}
+	.plusminus-plus{
+		color: green;
+		font-weight: bold;
+	}
+	.plusminus-minus{
+		color: red;
+		font-weight: bold;
+	}

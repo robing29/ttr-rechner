@@ -1,0 +1,79 @@
+<!-- TTRneu = TTRalt + Rundung auf ganze Zahlen[{(Resultat – erwartetes Resultat) x
+Änderungskonstante}]
+
+https://prnt.sc/shw4l7 
+
+https://www.mytischtennis.de/public/imagedata/20150801-Beschreibung-der-JOOLA-Rangliste.pdf
+
+16 als Grundwert
++4 für 15 Einzel, wenn es in den letzten 365 Tagen keine bewertete Veranstaltung des Spielers
+gegeben hat
++4, wenn die Anzahl bewerteter Einzel des Spielers < 30 ist
++4, wenn das Alter des Spielers < 21 Jahre ist
++4, wenn das Alter des Spielers < 16 Jahre ist-->
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<title>Robin Gudes TTR-Rechner</title>
+</head>
+
+
+
+<body>
+	<form action="/ttr-rechner" method="post">
+		<h1 id="testjs">TTR-Rechner</h1>
+		<ul>
+			<li>
+				<label for="id-ttr-alt">Ihr TTR-Wert:</label>
+				<input type="text" id="id-ttr-alt" name="ttr-alt" value="1700">
+				<span id="ttrFehler" class="Fehlermeldung"></span>
+			</li>
+			<li>
+				<h2>TTR-Werte Ihrer Gegner</h2>
+			</li>
+			<fieldset>
+				<legend>Gegner</legend> 
+				<ul id="id-gegnerliste">
+				<li id="id-liste0">
+					<!-- Liste wegen html-Problem und komischen whitespaces ohne Absätze/Enter formatiert -->
+					<label for="id-gegner0">Gegner 1: </label><input type="text" id="id-gegner0" name="gegner0"><label for="id-gegner0win"> Hast du gewonnen? </label><input type="checkbox" id="id-gegner0win" name="gegner0win"><span id="id-gegner0pm"></span>
+				</li>
+				</ul>
+				<div id="newRow"><button type="button" id="btnNewRow">Neue Reihe</button><button type ="button" id="btnDeleteRow" style="display: none;">Reihe löschen</button>
+			</fieldset>
+		</ul>
+		<hr>
+		<ul>
+			<section id="aks">	
+				<fieldset>
+					<legend>Änderungskonstanten-Variablen</legend>
+					<li>
+						<label for="id-ak365">Kein Einzel gespielt in den letzten 365 Tagen</label>
+						<input type="checkbox" id="id-ak-365" name="ak365">
+					</li>
+					<li>
+						<label for="id-ak30einzel">Weniger als 30 Einzel gespielt überhaupt</label>
+						<input type="checkbox" id="id-ak30einzel" name="ak30einzel">
+					</li>
+					<li>
+						<label for="id-alter">Alter: </label>
+						<input type="text" id="id-alter" name="alter" value="20">
+					</li>
+				</fieldset>
+			</section>
+			<li class="button">
+				<button type="button" id="btn-ausrechnen"><strong>Ausrechnen!</strong></button>
+			</li>
+		</ul>
+	</form>
+	<hr>
+	<p>Ihr neuer TTR Wert ist: <span id="neuerWert"></span></p>
+	<script src="ttr-rechner.js"></script>
+</body>
+
+
+
+
+</html>
